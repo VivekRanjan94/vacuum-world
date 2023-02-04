@@ -1,0 +1,43 @@
+.grid {
+  width: 600px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+
+  .wall {
+    background-color: black;
+  }
+
+  .visited {
+    background-color: greenyellow;
+  }
+
+  .current {
+    background-color: red;
+  }
+
+  .vacuum {
+    background-color: #00dbff;
+  }
+
+  .cell {
+    position: relative;
+    border: 1px solid black;
+
+    .dot {
+      &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        -webkit-border-radius: 0.375rem;
+        border-radius: 0.375rem;
+        height: 0.75rem;
+        width: 0.75rem;
+        background-color: black;
+      }
+    }
+  }
+}
